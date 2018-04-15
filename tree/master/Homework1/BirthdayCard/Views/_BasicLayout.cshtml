@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" />
+</head>
+    <body>
+        <header>
+            <div id="birthday-card-generator">
+                <h1>Birthday Card Generator</h1>
+            </div>
+            <h1 id="primary-content">Send A Birthday Card</h1>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <p>Copyright &copy; @DateTime.Now.Year - Website Designed by asmerom, All rights reserved.</p>
+        </footer>
+
+    </body>
+</html>
+

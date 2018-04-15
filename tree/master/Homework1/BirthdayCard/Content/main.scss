@@ -1,0 +1,154 @@
+﻿@import "normalize.css";
+@import "variables";
+
+html {
+    font: normal normal 16px/1.2 Helvetica, sans-serif; // 1.2 is line-height
+}
+
+h2 {
+    font: $h2-font;
+    color: $black;
+    line-height: 1rem;
+    padding: .5rem 0;
+}
+
+
+p {
+    font: bold normal .9rem Quicksand, sans-serif;
+    color: blue;
+    line-height: 1rem;
+    padding: 0 0;
+}
+
+form {
+    width: $form-width;
+    margin: 0 0 1rem;
+    border: .05rem #84a solid;
+    border-radius: .2rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+input[type="submit"] {
+    padding: .4rem;
+    width: 12rem;
+    font-size: 1.0rem;
+    color: white;
+    background-color: $button-bgnd-color;
+    border: 1px solid $button-bgnd-color;
+    border-radius: .3rem;
+    margin: 1rem 0 1rem 3rem;
+}
+
+
+.user-input {
+    width: $full-width;
+    padding: .5rem 0 .4rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 0 0 1rem;
+}
+
+.birthday-name {
+    padding-right: 1rem;
+    width: 3rem;
+}
+
+#birthday-card-generator {
+    width: 80%;
+    text-align: center;
+    color: lightblue;
+    background-color: brown;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    border-radius: 1rem;
+    padding: 1rem 0;
+
+    h1 {
+        font: bold normal 2.1rem Quicksand, sans-serif;
+    }
+}
+
+
+
+header {
+    border-bottom: 0.06rem dashed blue;
+    margin-bottom: 1rem;
+}
+
+
+#primary-content {
+    font: $header-font;
+    text-align: center;
+    color: $header-color;
+}
+
+#primary-content::first-letter {
+    font-size: 5rem;
+}
+
+body {
+    background-color: $body-bgd;
+    position: relative;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+
+main {
+    margin: $main-margin;
+    width: $main-width;
+    border-right: $main-side-border;
+    border-left: $main-side-border;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-page-actionlink {
+    font: bold normal 1.5rem Permanent Marker, sans-serif;
+}
+
+
+footer {
+    margin-top: 1rem;
+    text-align: center;
+    border-top: 0.06rem dashed blue;
+    padding-top: 1rem;
+
+    p {
+        font: bold normal .7rem Quicksand, sans-serif;
+    }
+}
+
+
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}

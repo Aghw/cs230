@@ -1,0 +1,29 @@
+﻿@model BirthdayCard.Models.BirthdayCard
+
+@{
+    ViewBag.Title = "Birthday Message From Sam";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="user-input">
+        <label class="birthday-name">From:</label> @Html.TextBoxFor(e => e.From,
+        new { @class = "form-control", maxlength = 30, style = "width:200px;" })
+    </div>
+
+    <div class="user-input">
+        <label class="birthday-name">To:</label> @Html.TextBoxFor(e => e.To,
+        new { @class = "form-control", maxlength = 30, style = "width:200px;" })
+    </div>
+
+    <div class="user-input">
+        <label>Message (write birthday message):</label> @Html.TextAreaFor(e => e.Message,
+        new { @class = "form-control", maxlength = 250, style = "width:90%;" })
+    </div>
+
+    <div class="user-input">
+        <input type="submit" class="btn" value="Send Birthday Card" />
+    </div>
+}
+
