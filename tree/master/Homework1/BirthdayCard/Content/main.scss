@@ -18,11 +18,18 @@ p {
     color: blue;
     line-height: 1rem;
     padding: 0 0;
+
 }
+
+
+.birthday-message {
+    font-style: italic;
+}
+
 
 form {
     width: $form-width;
-    margin: 0 0 1rem;
+    margin: 0 0 $gap;
     border: .05rem #84a solid;
     border-radius: .2rem;
     position: relative;
@@ -42,7 +49,7 @@ input[type="submit"] {
     background-color: $button-bgnd-color;
     border: 1px solid $button-bgnd-color;
     border-radius: .3rem;
-    margin: 1rem 0 1rem 3rem;
+    margin: $gap 0 $gap 3rem;
 }
 
 
@@ -58,7 +65,7 @@ input[type="submit"] {
 }
 
 .birthday-name {
-    padding-right: 1rem;
+    padding-right: $gap;
     width: 3rem;
 }
 
@@ -72,7 +79,7 @@ input[type="submit"] {
     justify-content: space-around;
     align-content: center;
     border-radius: 1rem;
-    padding: 1rem 0;
+    padding: $gap 0;
 
     h1 {
         font: bold normal 2.1rem Quicksand, sans-serif;
@@ -82,8 +89,8 @@ input[type="submit"] {
 
 
 header {
-    border-bottom: 0.06rem dashed blue;
-    margin-bottom: 1rem;
+    border-bottom: $header-footer-line;
+    margin-bottom: $gap;
 }
 
 
@@ -123,10 +130,10 @@ main {
 
 
 footer {
-    margin-top: 1rem;
+    margin-top: $gap;
     text-align: center;
-    border-top: 0.06rem dashed blue;
-    padding-top: 1rem;
+    border-top: $header-footer-line;
+    padding-top: $gap;
 
     p {
         font: bold normal .7rem Quicksand, sans-serif;
