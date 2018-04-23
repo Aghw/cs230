@@ -1,0 +1,70 @@
+﻿@import "normalize.css";
+@import "variables";
+
+html {
+    font: normal normal 16px/1.2 Helvetica, sans-serif; // 1.2 is line-height
+}
+
+h2 {
+    font: $h2-font;
+    color: $black;
+    padding: .5rem 0;
+}
+
+
+p {
+    color: $black;
+}
+
+
+header {
+    border-bottom: $header-footer-line;
+    margin-bottom: $gap;
+}
+
+
+body {
+    background-color: $body-bgd;
+    position: relative;
+    line-height: $line-height;
+    margin: 0 auto;
+}
+
+
+
+footer {
+    margin-top: $gap;
+    text-align: center;
+    border-top: $header-footer-line;
+    padding-top: $gap;
+
+}
+
+
+.learning-menu {
+    position: absolute;
+    right: 5%;
+}
+
+.learning-center-links {
+    font: normal normal 24px/1.5 Arial, san-serif;
+}
+
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
