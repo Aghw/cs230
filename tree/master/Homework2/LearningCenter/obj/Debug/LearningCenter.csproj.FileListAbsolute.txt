@@ -89,3 +89,7 @@ C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\obj\Debug\LearningCenter.csproj.CopyComplete
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\obj\Debug\LearningCenter.dll
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\obj\Debug\LearningCenter.pdb
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\bin\Autofac.dll
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\bin\Autofac.Integration.Mvc.dll
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\bin\Autofac.xml
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\LearningCenter\bin\Autofac.Integration.Mvc.xml

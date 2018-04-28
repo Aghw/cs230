@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirthdayCard", "BirthdayCard\BirthdayCard.csproj", "{37BEF711-204C-4BC6-85E5-364964C6D2E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCenter", "..\Homework2\LearningCenter\LearningCenter.csproj", "{88846AEC-2C4C-4136-B436-4B13C53C0B5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCenter", "LearningCenter\LearningCenter.csproj", "{88846AEC-2C4C-4136-B436-4B13C53C0B5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCenter.Tests", "LearningCenter.Tests\LearningCenter.Tests.csproj", "{9D052618-B81C-45AC-9558-DB897004B886}"
 EndProject

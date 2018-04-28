@@ -68,3 +68,16 @@ footer {
     font-weight: bold;
     color: #f00;
 }
+
+.navbar-learning {
+    background: #07557b;
+}
+
+.menu-hover {
+    transition: all 0s ease;
+
+    &:hover {
+        color: #e5daa2;
+        transform: scale(1.1);
+    }
+}

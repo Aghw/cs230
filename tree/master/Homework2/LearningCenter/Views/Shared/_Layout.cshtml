@@ -12,7 +12,7 @@
 
 </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-learning">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,13 +25,13 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li class="menu-hover">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="menu-hover">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="menu-hover">@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
                     <ul class="nav navbar-nav learning-menu">
-                        <li>@Html.ActionLink("Register", "Register", "Home")</li>
-                        <li>@Html.ActionLink("Log in", "Login", "Home")</li>
+                        <li class="menu-hover">@Html.ActionLink("Register", "Register", "Home")</li>
+                        <li class="menu-hover">@Html.ActionLink("Log in", "Login", "Home")</li>
                     </ul>
                 </div>
             </div>
