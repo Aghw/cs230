@@ -1,0 +1,11 @@
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\SchoolDatabase.dll.config
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\SchoolDatabase.dll
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\SchoolDatabase.pdb
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\EntityFramework.dll
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\EntityFramework.xml
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\obj\Debug\SchoolDatabase.csproj.CoreCompileInputs.cache
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\obj\Debug\SchoolDatabase.csproj.CopyComplete
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\obj\Debug\SchoolDatabase.dll
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\SchoolDatabase\obj\Debug\SchoolDatabase.pdb

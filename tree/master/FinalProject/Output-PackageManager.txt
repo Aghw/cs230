@@ -1,0 +1,48 @@
+﻿
+
+Attempting to gather dependency information for package 'Autofac.Mvc5.4.0.2' with respect to project 'ClassEnrollmentEF', targeting '.NETFramework,Version=v4.6.1'
+Gathering dependency information took 25.06 sec
+Attempting to resolve dependencies for package 'Autofac.Mvc5.4.0.2' with DependencyBehavior 'Lowest'
+Resolving dependency information took 0 ms
+Resolving actions to install package 'Autofac.Mvc5.4.0.2'
+Resolved actions to install package 'Autofac.Mvc5.4.0.2'
+Found package 'Autofac 4.0.1' in 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'.
+Found package 'Autofac.Mvc5 4.0.2' in 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'.
+Retrieving package 'Microsoft.AspNet.Mvc 5.1.0' from 'nuget.org'.
+Retrieving package 'Microsoft.AspNet.Razor 3.1.0' from 'nuget.org'.
+Retrieving package 'Microsoft.AspNet.WebPages 3.1.0' from 'nuget.org'.
+Found package 'Microsoft.Web.Infrastructure 1.0.0' in 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'.
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.aspnet.mvc/5.1.0/microsoft.aspnet.mvc.5.1.0.nupkg
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.aspnet.webpages/3.1.0/microsoft.aspnet.webpages.3.1.0.nupkg
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.aspnet.razor/3.1.0/microsoft.aspnet.razor.3.1.0.nupkg
+Package 'Autofac.4.0.1' already exists in folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.aspnet.mvc/5.1.0/microsoft.aspnet.mvc.5.1.0.nupkg 624ms
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.aspnet.webpages/3.1.0/microsoft.aspnet.webpages.3.1.0.nupkg 628ms
+Installing Microsoft.AspNet.WebPages 3.1.0.
+Installing Microsoft.AspNet.Mvc 5.1.0.
+Added package 'Autofac.4.0.1' to 'packages.config'
+Successfully installed 'Autofac 4.0.1' to ClassEnrollmentEF
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.aspnet.razor/3.1.0/microsoft.aspnet.razor.3.1.0.nupkg 1840ms
+Installing Microsoft.AspNet.Razor 3.1.0.
+Adding package 'Microsoft.AspNet.Razor.3.1.0' to folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.AspNet.Razor.3.1.0' to folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.AspNet.Razor.3.1.0' to 'packages.config'
+Successfully installed 'Microsoft.AspNet.Razor 3.1.0' to ClassEnrollmentEF
+Package 'Microsoft.Web.Infrastructure.1.0.0' already exists in folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.Web.Infrastructure.1.0.0' to 'packages.config'
+Successfully installed 'Microsoft.Web.Infrastructure 1.0.0' to ClassEnrollmentEF
+Adding package 'Microsoft.AspNet.WebPages.3.1.0' to folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.AspNet.WebPages.3.1.0' to folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.AspNet.WebPages.3.1.0' to 'packages.config'
+Successfully installed 'Microsoft.AspNet.WebPages 3.1.0' to ClassEnrollmentEF
+Adding package 'Microsoft.AspNet.Mvc.5.1.0' to folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.AspNet.Mvc.5.1.0' to folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Microsoft.AspNet.Mvc.5.1.0' to 'packages.config'
+Successfully installed 'Microsoft.AspNet.Mvc 5.1.0' to ClassEnrollmentEF
+Package 'Autofac.Mvc5.4.0.2' already exists in folder 'C:\Users\craftbew\Desktop\foundations\cs230\tree\master\Homework2\packages'
+Added package 'Autofac.Mvc5.4.0.2' to 'packages.config'
+Successfully installed 'Autofac.Mvc5 4.0.2' to ClassEnrollmentEF
+Executing nuget actions took 33.91 sec
+Time Elapsed: 00:01:00.1405041
+========== Finished ==========
+

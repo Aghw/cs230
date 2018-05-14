@@ -1,0 +1,42 @@
+﻿@model LearningCenter.Models.ClassViewModel
+
+@{
+    ViewBag.Title = "Enrolled Classes";
+    ViewBag.PageDescription = "Student Classes";
+    Layout = "~/Views/Shared/_SiteMasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<h2>Enrolled Classes</h2>
+@if (Model.Classes.Length > 0)
+{
+    <table class="class-enrollment-table">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Classes[0].Name)        </th>
+            <th>@Html.DisplayNameFor(m => m.Classes[0].Description) </th>
+            <th>@Html.DisplayNameFor(m => m.Classes[0].Price)       </th>
+        </tr>
+
+        @foreach (var userclass in Model.Classes)
+        {
+            <tr>
+                <td style="width: 6rem;"> @userclass.Name </td>
+                <td style="width: 15rem;"> @userclass.Description </td>
+                <td style="width: 3rem;">
+                    @string.Format("{0:C}", userclass.Price)
+                </td>
+                <td style="width: 5.5rem;">
+                    @Html.ActionLink("Class Detail", "ClassDetail", "Home", new { id = userclass.Id }, null)
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h2>No Class data found.</h2>
+}
+
+<p class="space-above">
+    @Html.ActionLink("Add Class", "Enroll", "Home") if you want to enroll in additional classes.
+</p>

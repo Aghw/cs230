@@ -1,0 +1,40 @@
+﻿@model LearningCenter.Models.ClassViewModel
+@{
+    ViewBag.Title = "Enroll in class";
+    ViewBag.PageDescription = "Enroll In Class";
+    Layout = "~/Views/Shared/_SiteMasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+@*<h2>Enroll In Class</h2>*@
+@using (Html.BeginForm())
+{
+    if (Model != null && Model.Classes.Length > 0)
+    {
+        <div class="enroll-in-class">
+            @Html.DropDownListFor(e => e.Classes.First().Id,
+                                     new SelectList(Model.Classes, "Id", "Name", "Description"), "Select Class",
+                                     new { @class = "form-control classes-dropdown-size", maxlength = 30 })
+
+            @if (Session["User"] != null)
+            {
+                var user = (LearningCenter.Models.UserModel)Session["User"];
+            }
+            <input type="submit" class="btn btn-primary" value="Add Class" />
+        </div>
+
+        if (Session["User"] != null)
+        {
+            var user = (LearningCenter.Models.UserModel)Session["User"];
+            <p class="space-above">
+                @Html.ActionLink("See Your Classes", "EnrolledClasses", "Home", new { userId = user.Id }, null)
+            </p>
+        }
+
+
+    }
+    else
+    {
+        <h2>No Class data found.</h2>
+    }
+}

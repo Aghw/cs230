@@ -1,0 +1,73 @@
+﻿@*@model LearningCenter.Models.ClassMaster[]
+
+@{
+    ViewBag.Title = "Classes List";
+    //ViewBag.Header = "Log in.";
+    ViewBag.PageDescription = "Display the list of classes";
+    Layout = "~/Views/Shared/_SiteMasterLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<h2>Classes</h2>
+@if (Model.Length > 0)
+{
+    <table>
+
+        @foreach (var classmaster in Model)
+        {
+            <tr>
+                <td> @classmaster.ClassName </td>
+                <td> @classmaster.ClassDescription </td>
+                <td>
+                    @string.Format("{0:C}", classmaster.ClassPrice)
+                </td>
+
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h2>No Class data found.</h2>
+}*@
+
+
+@model LearningCenter.Models.ClassViewModel
+
+
+@{
+    ViewBag.Title = "Classes List";
+    ViewBag.PageDescription = "Display list of offered classes";
+    Layout = "~/Views/Shared/_SiteMasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<h2>Classes</h2>
+@if (Model.Classes.Length > 0)
+{
+    <table class="class-enrollment-table">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Classes[0].Name)        </th>
+            <th>@Html.DisplayNameFor(m => m.Classes[0].Description) </th>
+            <th>@Html.DisplayNameFor(m => m.Classes[0].Price)       </th>
+        </tr>
+
+        @foreach (var classmaster in Model.Classes)
+        {
+            <tr>
+                <td style="width: 6rem;"> @classmaster.Name </td>
+                <td  style="width: 15rem;"> @classmaster.Description </td>
+                <td style="width: 3rem;">
+                    @string.Format("{0:C}", classmaster.Price)
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h2>No Class data found.</h2>
+}

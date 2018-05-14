@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LearningCenter.Models.UserModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -9,10 +11,25 @@
 </div>
 
 <div class="row">
+    @*@Html.Action("IncrementCount")*@
+
+
+    @*@if (Session["UserName"] == null)
+        {
+            @Html.ActionLink("Login", "Login")
+        }
+        else
+        {
+            @Html.ActionLink("Logoff", "Logoff")
+            @Html.Action("DisplayLoginName")
+        }*@
+
+
+
     <div class="col-md-4">
         @*<h2><a href="">Class List</a></h2>*@
         <div class="learning-center-links">
-            @Html.ActionLink("Class List", "")
+            @Html.ActionLink("Class List", "ClassList")
         </div>
         <p>
             See all our class offerings.
@@ -22,16 +39,35 @@
     <div class="col-md-4">
         @*<h2><a href="">Your enrolled classes</a></h2>*@
         <div class="learning-center-links">
-            @Html.ActionLink("Your enrolled classes", "")
+            @*@if (@Request.IsAuthenticated)*@ 
+            @if (Session["User"] != null)
+            {
+                var user = (LearningCenter.Models.UserModel)Session["User"];
+                @Html.ActionLink("Your enrolled classes", "EnrolledClasses", "Home", new { userId = user.Id }, null);
+            }
+            else
+            {
+                @Html.ActionLink("Your enrolled classes", "LoginToContinue");
+            }
+            
         </div>
         <p>See all the classes you're enrolled in.</p>
     </div>
 
     <div class="col-md-4">
-        @*<h2><a href="">Enroll in a class</a></h2>*@
         <div class="learning-center-links">
-            @Html.ActionLink("Enroll in a class", "")
+            @if (Session["User"] != null)
+            {
+                var user = (LearningCenter.Models.UserModel)Session["User"];
+                @*@Html.ActionLink("Enroll in a class", "ClassEnroll", "Home", new { userId = user.Id }, null);*@
+                @Html.ActionLink("Enroll in a class", "Enroll", "Home");
+            }
+            else
+            {
+                    @Html.ActionLink("Enroll in a class", "LoginToContinue");
+            }
         </div>
+
         <p>Take a new class.</p>
     </div>
 </div>
