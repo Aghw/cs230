@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Autofac;
+using Autofac.Integration.Mvc;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
-using System.Reflection;
-using Autofac;
-using Autofac.Integration.Mvc;
-using System.Net;
-using System.Net.Mail;
 
 namespace LearningCenter
 {
@@ -50,10 +44,10 @@ namespace LearningCenter
 
             foreach (var assemblyName in assemblyNames)
             {
-                if (assemblyName.FullName.ToLower().Contains("business") ||
-                    assemblyName.FullName.ToLower().Contains("repository") ||
-                    assemblyName.FullName.ToLower().Contains("learningcenter") ||
-                    assemblyName.FullName.ToLower().Contains("enrollmentdatabase"))
+                if (assemblyName.FullName.ToLower().Equals("business") ||
+                    assemblyName.FullName.ToLower().Equals("repository") ||
+                    assemblyName.FullName.ToLower().Equals("learningcenter") ||
+                    assemblyName.FullName.ToLower().Equals("enrollmentdatabase"))
                 {
                     assembly = Assembly.Load(assemblyName);
                     RegisterAssemblyTypes(builder, assembly);
@@ -64,7 +58,7 @@ namespace LearningCenter
 
         // this procedure should give a nice error page when there is an error,
         // but also, it should send email about the error to the dev-team.
-        protected void xxxApplication_Error()
+        protected void Application_Error()
         {
             var exception = Server.GetLastError();
 

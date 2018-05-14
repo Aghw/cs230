@@ -1,16 +1,10 @@
-﻿using System;
-using System.Globalization;
-using System.Collections.Generic;
+﻿using Business;
+using LearningCenter.Models;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
 using System.Web.UI;
-using Business;
-using LearningCenter.Models;
 
 namespace LearningCenter.Controllers
 {
@@ -75,7 +69,7 @@ namespace LearningCenter.Controllers
 
         [HttpGet]
         public ActionResult Login()
-        {
+        { 
             return View();
         }
 
