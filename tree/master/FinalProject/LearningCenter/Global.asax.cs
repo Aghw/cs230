@@ -53,7 +53,7 @@ namespace LearningCenter
                 if (assemblyName.FullName.ToLower().Contains("business") ||
                     assemblyName.FullName.ToLower().Contains("repository") ||
                     assemblyName.FullName.ToLower().Contains("learningcenter") ||
-                    assemblyName.FullName.ToLower().Contains("schooldatabase"))
+                    assemblyName.FullName.ToLower().Contains("enrollmentdatabase"))
                 {
                     assembly = Assembly.Load(assemblyName);
                     RegisterAssemblyTypes(builder, assembly);

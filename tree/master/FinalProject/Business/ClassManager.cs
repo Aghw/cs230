@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Repository;
 
 namespace Business
@@ -11,7 +8,7 @@ namespace Business
     {
         IEnumerable<ClassModel> Classes { get; }
         ClassModel Class(int classId);
-        ClassModel[] UserClassList(int userId);
+        IEnumerable<ClassModel> UserClassList(int userId);
     }
 
     public class ClassModel
@@ -50,26 +47,24 @@ namespace Business
             get
             {
                 return classRepository.Classes
-                                       .Select(a => 
-                                       new ClassModel(a.Id, a.Name, 
-                                                      a.Description, a.Price));
+                                      .Select(a => new ClassModel(a.Id, a.Name, a.Description, a.Price));
             }
         }
 
 
         public ClassModel Class(int classId)
         {
-            var classModel = classRepository.Class(classId);
-            return new ClassModel(classModel.Id, classModel.Name,
-                                  classModel.Description, classModel.Price);
+            var model = classRepository.Class(classId);
+            return new ClassModel(model.Id, model.Name, model.Description, model.Price);
         }
 
 
-        public ClassModel[] UserClassList(int userId)
+        public IEnumerable<ClassModel> UserClassList(int userId)
         {
-            var enrolledClasses = (ClassModel[]) classRepository.ForUser(userId).ToArray();
-            var models = enrolledClasses;
-            return models;
+            var enrolledClasses = classRepository.ForUser(userId)
+                                                .Select(a => 
+                                                new ClassModel(a.Id, a.Name, a.Description, a.Price));
+            return enrolledClasses;
         }
     }
 }

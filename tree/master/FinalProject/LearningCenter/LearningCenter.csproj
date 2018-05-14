@@ -182,50 +182,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="AuthorizeIPAddressAttribute.cs" />
-    <Compile Include="ClassEnrollmentRepository.cs" />
-    <Compile Include="ClientRepository.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataAccessLayer\Class.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\ClassEnrollment.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClassEnrollment.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\ClassEnrollment.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\ClassEnrollment.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClassEnrollment.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\EnrollDBContext.cs" />
-    <Compile Include="DataAccessLayer\LearningCenterDBContext.cs" />
-    <Compile Include="DataAccessLayer\RetrieveClassesForStudent_Result.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\RetrieveStudentsEnrolledInClass_Result.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\sysdiagram.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\User.cs">
-      <DependentUpon>ClassEnrollment.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseAccessor.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -244,7 +203,6 @@
     <Compile Include="Models\UserClassModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -256,16 +214,6 @@
     </Content>
     <Content Include="Content\main.min.css">
       <DependentUpon>main.css</DependentUpon>
-    </Content>
-    <Content Include="DataAccessLayer\ClassEnrollment.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClassEnrollment.edmx</DependentUpon>
-      <LastGenOutput>ClassEnrollment.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataAccessLayer\ClassEnrollment.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClassEnrollment.edmx</DependentUpon>
-      <LastGenOutput>ClassEnrollment.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -283,13 +231,6 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <EntityDeploy Include="DataAccessLayer\ClassEnrollment.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ClassEnrollment.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DataAccessLayer\ClassEnrollment.edmx.diagram">
-      <DependentUpon>ClassEnrollment.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -330,7 +271,6 @@
     <Content Include="Views\Home\NoCookieSet.cshtml" />
     <Content Include="Views\Home\Notes.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Home\NoEnrolledClasses.cshtml" />
     <Content Include="Views\Home\ClassDetail.cshtml" />
     <Content Include="Views\Home\Enroll.cshtml" />
     <Content Include="Views\Home\LoginToContinue.cshtml" />

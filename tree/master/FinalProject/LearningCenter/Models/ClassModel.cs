@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace LearningCenter.Models
+﻿namespace LearningCenter.Models
 {
     public class ClassModel
     {
@@ -17,6 +12,12 @@ namespace LearningCenter.Models
 
         //[Required(ErrorMessage = "Please enter class price")]
         public decimal Price { get; set; }
+
+
+        public ClassModel()
+        {
+
+        }
 
         public ClassModel(int id, string name, string description, decimal price)
         {

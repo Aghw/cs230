@@ -1,5 +1,3 @@
-C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bin\Debug\Business.dll.config
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bin\Debug\Business.dll
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bin\Debug\Business.pdb
@@ -45,6 +43,8 @@ C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bi
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bin\Debug\EnrollmentDb.pdb
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\bin\Debug\EnrollmentDb.dll.config
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.dll
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\Business\obj\Debug\Business.pdb

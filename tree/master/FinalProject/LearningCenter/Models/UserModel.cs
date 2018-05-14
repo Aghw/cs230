@@ -9,10 +9,5 @@ namespace LearningCenter.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        //public int ClassId { get; set; }
-
-        //public List<ClassModel> UserClassList { get; set; }
-        //public ICollection<ClassModel> UserClassList { get; set; }
-
     }
 }

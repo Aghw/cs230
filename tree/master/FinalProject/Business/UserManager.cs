@@ -42,6 +42,11 @@ namespace Business
         public UserModel LogIn(string email, string password)
         {
             var user = userRepository.LogIn(email, password);
+
+            if (user == null)
+            {
+                return null;
+            }
             return new UserModel(user.Id, user.Name, user.Password);
         }
         //public UserModel LogIn(string email, string password)

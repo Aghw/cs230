@@ -6,11 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LearningCenter.Models
 {
-    //public class LoginModel
-    //{
-    //    public string UserName { get; set; }
-    //}
-
     public class LoginModel
     {
         public int Id { get; set; }

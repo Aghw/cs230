@@ -11,7 +11,6 @@ using Microsoft.Owin.Security;
 using System.Web.UI;
 using Business;
 using LearningCenter.Models;
-//using LearningCenter.App_Start;
 
 namespace LearningCenter.Controllers
 {
@@ -19,22 +18,13 @@ namespace LearningCenter.Controllers
     //[AuthorizeIPAddress]
     public class HomeController : Controller
     {
-        //private IUserRepository userRepository;
         private readonly IClassManager classManager;
-        //private readonly IUserManager userManager;
         private readonly IUserManager userManager;
-        //private ApplicationUserManager _userManager;
-
-        //public HomeController(IUserRepository userRepository)
-        //{
-        //    this.userRepository = userRepository;
-        //}
 
         public HomeController(IClassManager classManager,
                               IUserManager userManager)
         {
             this.classManager = classManager;
-            //this.userRepository = userRepository;
             this.userManager = userManager;
         }
 
@@ -89,22 +79,6 @@ namespace LearningCenter.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Login(Models.LoginModel  login)
-        //{
-        //    // we are assuming the modelstate is valid
-        //    if (ModelState.IsValid)
-        //    {
-        //        Session["UserName"] = login.UserName;
-        //        return RedirectToAction("Index");
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        
         [HttpPost]
         public ActionResult LogIn(LoginModel loginModel, string returnUrl)
         {
@@ -129,14 +103,6 @@ namespace LearningCenter.Controllers
             return View(loginModel);
         }
 
-
-
-        //public ActionResult Logoff()
-        //{
-        //    Session["UserName"] = null;
-        //    return RedirectToAction("Index");
-        //}
-
         public ActionResult LogOff()
         {
             Session["User"] = null;
@@ -150,7 +116,6 @@ namespace LearningCenter.Controllers
             // Name the cookie as MyCookie for later retrieval
             var cookie = new HttpCookie("MyCookie")
             {
-
                 // This cookie will expire about one minute, depends on the browser
                 Expires = DateTime.Now.AddMinutes(1),
 
@@ -169,14 +134,6 @@ namespace LearningCenter.Controllers
         {
             var cookie = HttpContext.Request.Cookies["MyCookie"];
             return View(cookie);
-            //if (cookie != null)
-            //{
-            //    return View(cookie);
-            //}
-            //else
-            //{
-            //    return View("NoCookieSet");
-            //}
         }
 
         public PartialViewResult DisplayLoginName()
@@ -185,11 +142,6 @@ namespace LearningCenter.Controllers
         }
 
         //[HttpGet]
-        //public ActionResult Register()
-        //{
-        //    return View();
-        //}
-        //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
@@ -200,7 +152,7 @@ namespace LearningCenter.Controllers
         [HttpPost]
         //[AllowAnonymous]
         //[ValidateAntiForgeryToken]
-         public ActionResult Register(RegisterModel registerModel)
+        public ActionResult Register(RegisterModel registerModel)
         {
             if (ModelState.IsValid)
             {
@@ -213,28 +165,6 @@ namespace LearningCenter.Controllers
         }
 
 
-
-        //public ApplicationUserManager UserManager
-        //{
-        //    get
-        //    {
-        //        return null;
-        //    }
-        //    private set
-        //    {
-        //        _userManager = value;
-        //    }
-        //}
-
-
-
-        //private void AddErrors(IdentityResult result)
-        //{
-        //    foreach (var error in result.Errors)
-        //    {
-        //        ModelState.AddModelError("", error);
-        //    }
-        //}
         [HttpGet]
         [OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
         public ActionResult ClassDetail() => View();
@@ -243,23 +173,9 @@ namespace LearningCenter.Controllers
         [OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
         public ActionResult ClassList()
         {
-            //var classes_offered = classRepository.Classes
-            //                                     .Select(a => new LearningCenter.Models.ClassModel
-            //                                     {
-            //                                         Id = a.Id,
-            //                                         Name = a.Name,
-            //                                         Description = a.Description,
-            //                                         Price = a.Price
-            //                                     }).ToArray();
             var classes_offered = classManager.Classes
                                               .Select(a => new LearningCenter.Models.ClassModel
-                                                (
-                                                    a.Id,
-                                                    a.Name,
-                                                    a.Description,
-                                                    a.Price
-                                                )).ToArray();
-            //return View(classRepository.Classes);
+                                                (a.Id, a.Name, a.Description, a.Price)).ToArray();
             var model = new ClassViewModel
             {
                 Classes = (LearningCenter.Models.ClassModel[]) classes_offered
@@ -271,51 +187,29 @@ namespace LearningCenter.Controllers
         [OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
         public ActionResult Enroll()
         {
-            //var classes_offered = classRepository.Classes
-            //                    .Select(a => new LearningCenter.Models.ClassModel
-            //                    {
-            //                        Id = a.Id,
-            //                        Name = a.Name,
-            //                        Description = a.Description,
-            //                        Price = a.Price
-            //                    }).ToArray();
-            var classes_offered = classManager.Classes
-                                              .Select(a => new LearningCenter.Models.ClassModel
-                                                (
-                                                    a.Id,
-                                                    a.Name,
-                                                    a.Description,
-                                                    a.Price
-                                                )).ToArray();
+            var classes = classManager.Classes
+                                      .Select(a => new LearningCenter.Models.ClassModel
+                                       (a.Id, a.Name, a.Description, a.Price)).ToArray();
             var model = new ClassViewModel
             {
-                Classes = (LearningCenter.Models.ClassModel[])classes_offered
+                Classes = (LearningCenter.Models.ClassModel[])classes
             };
             return View(model);
         }
 
         [HttpPost]
         [OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
-        //public ActionResult ClassEnroll()
-        //{
-        //    return View();
-        //}
         public ActionResult Enroll(LearningCenter.Models.ClassModel classModel)
         {
             if (ModelState.IsValid)
             {
                 if (Session["User"] != null && Request.Form["Id"] != null)
                 {
+                    // get current user
                     var user = (LearningCenter.Models.UserModel)Session["User"];
-                    // get user from DatabaseAccessor.Instance.Users
-                    //UserModel curUser = userRepository.User(user_id);
 
-                    // get class from DatabaseAccessor.Instance.Classes
-                    //ClassModel selectedClass = classRepository.Class(classModel.Id);
-                    //userRepository.AddClassToUser(user.Id, classModel.Id);
+                    // add class to user
                     userManager.AddClass(user.Id, classModel.Id);
-                    //string selected_class = Request.Form["Id"].ToString();
-                    //int classId = classModel.Id;
                 }
 
                 return Redirect("~/Home/Enroll");
@@ -323,65 +217,22 @@ namespace LearningCenter.Controllers
             return View();
         }
 
+        [HttpGet]
+        [OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
         public ActionResult LoginToContinue() => View();
 
-        //[HttpGet]
-        //[OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
-        //public ActionResult ClassEnroll(int userId)
-        //{
-        //    var classes_offered = classRepository.Classes
-        //                        .Select(a => new LearningCenter.Models.ClassModel
-        //                        {
-        //                            Id = a.Id,
-        //                            Name = a.Name,
-        //                            Description = a.Description,
-        //                            Price = a.Price
-        //                        }).ToArray();
-
-        //    var model = new ClassViewModel
-        //    {
-        //        Classes = (LearningCenter.Models.ClassModel[])classes_offered
-        //    };
-        //    return View(model);
-        //}
-
-        //[HttpPost]
-        //[OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
-        //public ActionResult ClassEnroll(int userId, int classId)
-        //{
-        //    var user_id = userId;
-        //    var class_id = classId;
-        //    return View();
-        //}
-
-        public void EnrollUserInClass(int userId, int classId)
-        {
-            var user_id = userId;
-            var class_id = classId;
-        }
-
-        //[HttpGet]
-        //[OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
-        //public ActionResult NoEnrolledClasses() => View();
+       
 
         [HttpGet]
         [OutputCache(Duration = 15, Location = OutputCacheLocation.Any, VaryByParam = "none")]
-        //public ActionResult EnrolledClasses() => View();
         public ActionResult EnrolledClasses(int userId)
         {
-            //var user = userManager.LogIn(loginModel.UserName, loginModel.Password);
-            //var classes_offered = classRepository.ForUser(userId)
-            //                                     .Select(a => new LearningCenter.Models.ClassModel
-            //                                     {
-            //                                         Id = a.Id,
-            //                                         Name = a.Name,
-            //                                         Description = a.Description,
-            //                                         Price = a.Price
-            //                                     }).ToArray();
-            var classes_offered = (Models.ClassModel[]) classManager.UserClassList(userId);
+            var classes_offered = classManager.UserClassList(userId)
+                                              .Select(a => new LearningCenter.Models.ClassModel
+                                              (a.Id, a.Name, a.Description, a.Price )).ToArray();
             var model = new ClassViewModel
             {
-                Classes = (Models.ClassModel[])classes_offered
+                Classes = classes_offered
             };
             return View(model);
         }
