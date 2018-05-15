@@ -58,7 +58,7 @@ namespace LearningCenter
 
         // this procedure should give a nice error page when there is an error,
         // but also, it should send email about the error to the dev-team.
-        protected void xxxApplication_Error()
+        protected void Application_Error()
         {
             var exception = Server.GetLastError();
 
