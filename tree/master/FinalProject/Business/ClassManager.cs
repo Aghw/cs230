@@ -51,13 +51,6 @@ namespace Business
             get
             {
                 return classRepository.Classes
-                                    //.Select(a => new ClassModel
-                                    //{
-                                    //    Id = a.Id,
-                                    //    Name = a.Name,
-                                    //    Description = a.Description,
-                                    //    Price = a.Price
-                                    //});
                 .Select(a => new ClassModel(a.Id, a.Name, a.Description, a.Price));
             }
         }
@@ -66,20 +59,7 @@ namespace Business
         public ClassModel Class(int classId)
         {
             var model = classRepository.Class(classId);
-            //return classRepository.Classes
-            //                       .Where(a => a.Id == classId)
-            //                       .Select(a => new ClassModel
-            //                       {
-            //                           Id = a.Id,
-            //                           Name = a.Name,
-            //                           Description = a.Description,
-            //                           Price = a.Price
-            //                       }).First();
             return new ClassModel(model.Id, model.Name, model.Description, model.Price);
-            //return  new ClassModel
-            //            {
-            //                model.Id, model.Name, model.Description, model.Price
-            //            };
         }
 
 
@@ -88,13 +68,6 @@ namespace Business
             var enrolledClasses = classRepository.ForUser(userId)
                                                 .Select(a =>
                                                 new ClassModel(a.Id, a.Name, a.Description, a.Price));
-            //.Select(a => new ClassModel
-            //{ 
-            //    Id = a.Id,
-            //    Name = a.Name,
-            //    Description = a.Description,
-            //    Price = a.Price
-            //});
             return enrolledClasses;
         }
     }

@@ -44,10 +44,10 @@ namespace LearningCenter
 
             foreach (var assemblyName in assemblyNames)
             {
-                if (assemblyName.FullName.ToLower().Equals("business") ||
-                    assemblyName.FullName.ToLower().Equals("repository") ||
-                    assemblyName.FullName.ToLower().Equals("learningcenter") ||
-                    assemblyName.FullName.ToLower().Equals("enrollmentdatabase"))
+                if (assemblyName.FullName.ToLower().Contains("business") ||
+                    assemblyName.FullName.ToLower().Contains("repository") ||
+                    assemblyName.FullName.ToLower().Contains("learningcenter") ||
+                    assemblyName.FullName.ToLower().Contains("enrollmentdatabase"))
                 {
                     assembly = Assembly.Load(assemblyName);
                     RegisterAssemblyTypes(builder, assembly);
