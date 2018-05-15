@@ -105,10 +105,7 @@ namespace Repository
                 return null;
             }
 
-            //return new UserModel { Id = user.Id, Name = user.Name, Password = user.Password };
-            //return new UserModel(user.Id, user.Name, user.Password);
             return new UserModel { Id = user.UserId, Name = user.UserEmail, Password = user.UserPassword };
         }
     }
-
 }

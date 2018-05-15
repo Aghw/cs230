@@ -49,30 +49,12 @@ namespace Business
             }
             return new UserModel(user.Id, user.Name, user.Password);
         }
-        //public UserModel LogIn(string email, string password)
-        //{
-        //    var user = userRepository.Users
-        //        .FirstOrDefault(t => t.Name.ToLower() == email.ToLower()
-        //                              && t.Password == password);
-
-        //    if (user == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    //return new UserModel { Id = user.Id, Name = user.Name, Password = user.Password };
-        //    return new UserModel(user.Id, user.Name, user.Password);
-        //}
 
         public UserModel Register(string email, string password)
         {
             var user = userRepository.Register(email, password);
-            //.Add(new UserModel { UserEmail = email, UserPassword = password });
-
-            //userRepository.SaveChanges();
 
             return new UserModel(user.Id, user.Name, user.Password );
-            //return new UserModel(userRepository.Register(email, password));
         }
 
         public IEnumerable<UserModel> Users

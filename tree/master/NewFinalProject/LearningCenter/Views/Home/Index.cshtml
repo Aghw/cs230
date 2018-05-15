@@ -1,0 +1,55 @@
+﻿@model LearningCenter.Models.UserModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>The Learning Center</h1>
+    <p class="lead">The place for technology classes.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="learning-center-links">
+            @Html.ActionLink("Class List", "ClassList")
+        </div>
+        <p>
+            See all our class offerings.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <div class="learning-center-links">
+            @if (Session["User"] != null)
+            {
+                var user = (LearningCenter.Models.UserModel)Session["User"];
+                @Html.ActionLink("Your enrolled classes", "EnrolledClasses", "Home", new { userId = user.Id }, null);
+            }
+            else
+            {
+                @Html.ActionLink("Your enrolled classes", "LoginToContinue");
+            }
+            
+        </div>
+        <p>See all the classes you're enrolled in.</p>
+    </div>
+
+    <div class="col-md-4">
+        <div class="learning-center-links">
+            @if (Session["User"] != null)
+            {
+                var user = (LearningCenter.Models.UserModel)Session["User"];
+                @*@Html.ActionLink("Enroll in a class", "ClassEnroll", "Home", new { userId = user.Id }, null);*@
+                @Html.ActionLink("Enroll in a class", "Enroll", "Home");
+            }
+            else
+            {
+                    @Html.ActionLink("Enroll in a class", "LoginToContinue");
+            }
+        </div>
+
+        <p>Take a new class.</p>
+    </div>
+</div>

@@ -1,0 +1,200 @@
+﻿@import "normalize.css";
+@import "variables";
+
+html {
+    font: normal normal 16px/1.2 Helvetica, sans-serif; // 1.2 is line-height
+}
+
+h2 {
+    font: $h2-font;
+    color: $black;
+    padding: .5rem 0;
+}
+
+
+p {
+    color: $black;
+}
+
+
+header {
+    /*margin-top: 3rem;*/
+    border-bottom: $header-footer-line;
+    margin-bottom: $gap;
+}
+
+
+
+
+#primary-content {
+    font: $header-font;
+    /*text-align: left;*/
+    color: $header-color;
+    padding-top: 3rem;
+    /*margin-top: 3rem;*/
+}
+
+#primary-content::first-letter {
+    font-size: 2.5rem;
+}
+
+
+
+body {
+    background-color: $body-bgd;
+    position: relative;
+    line-height: $line-height;
+    margin: 0 auto;
+}
+
+
+
+footer {
+    margin-top: $gap;
+    text-align: center;
+    border-top: $header-footer-line;
+    padding-top: $gap;
+    height: 3rem;
+}
+
+
+.learning-menu {
+    position: absolute;
+    right: 5%;
+}
+
+.learning-center-links {
+    font: normal normal 24px/1.5 Arial, san-serif;
+}
+
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.navbar-learning {
+    background: #07557b;
+}
+
+.menu-hover {
+    transition: all 0s ease;
+
+    &:hover {
+        color: #b6ff00;
+        transform: scale(1.5);
+    }
+}
+
+.text-box-size {
+    width: 10rem;
+
+    input[type="text"] {
+        height: 2.5rem;
+        font: $text-input;
+        color: blue;
+    }
+}
+
+.form-input-controls {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+    padding: .5rem 0;
+
+    label {
+        padding-right: 2rem;
+        padding-top: .2rem;
+    }
+
+    input[type="text"] {
+        height: 2.5rem;
+        font: $text-input;
+        color: blue;
+    }
+}
+
+.submit-button {
+    position: relative;
+    width: 50%;
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-around;
+    align-content: center;
+    padding: .5rem 0;
+    margin-right: 75%;
+}
+
+
+h2 {
+    font: $h2-font;
+    color: $header-color;
+    /*line-height: 1rem;
+    padding: .5rem 0;*/
+}
+
+
+.text-input-water-mark {
+    font-size: 1rem;
+    font-style: italic;
+    color: darkgray;
+}
+
+.class-enrollment-table {
+    width: 60%;
+
+    tr {
+        border-bottom: .1rem dotted #f00;
+    }
+
+    td {
+        color: blue;
+        height: 1.2em;
+        padding-left: .5rem;
+    }
+
+    th {
+        background: #fee;
+        padding-left: .5rem;
+    }
+}
+
+.enroll-in-class {
+    /*border: .1rem dotted blue;*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: flex-start;
+    padding-right: 3rem;
+
+    &::selection {
+        background-color: white;
+    }
+}
+
+.classes-dropdown-size {
+    width: 200px;
+    background-color: rgba(176, 200, 246, 0.62);
+   
+}
+
+.space-above {
+    margin-top: 1.5rem;
+}

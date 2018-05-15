@@ -6,7 +6,6 @@
 }
 
 <!DOCTYPE html>
-@*<h2>Enroll In Class</h2>*@
 @using (Html.BeginForm())
 {
     if (Model != null && Model.Classes.Length > 0)
@@ -30,8 +29,6 @@
                 @Html.ActionLink("See Your Classes", "EnrolledClasses", "Home", new { userId = user.Id }, null)
             </p>
         }
-
-
     }
     else
     {

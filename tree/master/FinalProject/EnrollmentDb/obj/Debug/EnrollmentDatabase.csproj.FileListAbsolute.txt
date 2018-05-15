@@ -41,4 +41,3 @@ C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\EnrollmentD
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\EnrollmentDb\obj\Debug\EnrollmentDatabase.csproj.CopyComplete
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\EnrollmentDb\obj\Debug\EnrollmentDb.dll
 C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\EnrollmentDb\obj\Debug\EnrollmentDb.pdb
-C:\Users\craftbew\Desktop\foundations\cs230\tree\master\FinalProject\EnrollmentDb\obj\Debug\EnrollmentDatabase.csprojResolveAssemblyReference.cache

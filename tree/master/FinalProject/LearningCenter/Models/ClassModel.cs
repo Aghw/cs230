@@ -14,17 +14,16 @@
         public decimal Price { get; set; }
 
 
-        public ClassModel()
-        {
-
-        }
-
         public ClassModel(int id, string name, string description, decimal price)
         {
             Id = id;
             Name = name;
             Description = description;
             Price = price;
+        }
+
+        public ClassModel() : this (0, "", "", 0.0M)
+        {
         }
     }
 }

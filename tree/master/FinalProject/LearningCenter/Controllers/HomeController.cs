@@ -168,8 +168,15 @@ namespace LearningCenter.Controllers
         public ActionResult ClassList()
         {
             var classes_offered = classManager.Classes
+                                              //.Select(a => new LearningCenter.Models.ClassModel
+                                              //  (a.Id, a.Name, a.Description, a.Price)).ToArray();
                                               .Select(a => new LearningCenter.Models.ClassModel
-                                                (a.Id, a.Name, a.Description, a.Price)).ToArray();
+                                              {
+                                                  Id = a.Id,
+                                                  Name = a.Name,
+                                                  Description = a.Description,
+                                                  Price = a.Price
+                                              }).ToArray();
             var model = new ClassViewModel
             {
                 Classes = (LearningCenter.Models.ClassModel[]) classes_offered
@@ -182,8 +189,15 @@ namespace LearningCenter.Controllers
         public ActionResult Enroll()
         {
             var classes = classManager.Classes
+                                      //.Select(a => new LearningCenter.Models.ClassModel
+                                      // (a.Id, a.Name, a.Description, a.Price)).ToArray();
                                       .Select(a => new LearningCenter.Models.ClassModel
-                                       (a.Id, a.Name, a.Description, a.Price)).ToArray();
+                                      {
+                                          Id = a.Id,
+                                          Name = a.Name,
+                                          Description = a.Description,
+                                          Price = a.Price
+                                      }).ToArray();
             var model = new ClassViewModel
             {
                 Classes = (LearningCenter.Models.ClassModel[])classes
@@ -222,8 +236,15 @@ namespace LearningCenter.Controllers
         public ActionResult EnrolledClasses(int userId)
         {
             var classes_offered = classManager.UserClassList(userId)
-                                              .Select(a => new LearningCenter.Models.ClassModel
-                                              (a.Id, a.Name, a.Description, a.Price )).ToArray();
+                                              //.Select(a => new LearningCenter.Models.ClassModel
+                                              //(a.Id, a.Name, a.Description, a.Price )).ToArray();
+                                      .Select(a => new LearningCenter.Models.ClassModel
+                                      {
+                                          Id = a.Id,
+                                          Name = a.Name,
+                                          Description = a.Description,
+                                          Price = a.Price
+                                      }).ToArray();
             var model = new ClassViewModel
             {
                 Classes = classes_offered
